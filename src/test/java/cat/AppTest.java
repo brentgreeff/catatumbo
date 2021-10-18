@@ -16,5 +16,13 @@ public class AppTest {
     params.setServiceURL("localhost:8081");
     params.setProjectId("brent-local");
     EntityManager em = emf.createEntityManager(params);
+
+    Person person = new Person();
+    person.setFirstName("John");
+
+    person = em.insert(person);
+    System.out.printf(
+      "person with ID %d created successfully", person.getId()
+    );
   }
 }
